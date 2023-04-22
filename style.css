@@ -1,0 +1,150 @@
+:root {
+    --strong-cyan: hsl(172, 67%, 45%);
+    --l-cyan: hsl(173, 61%, 77%);
+    --vdk-cyan: hsl(183, 100%, 15%);
+    --vl-grayish-cyan: hsl(189, 41%, 97%);
+    --l-grayish-cyan: hsl(185, 41%, 84%);
+    --grayish-cyan: hsl(184, 14%, 56%);
+    --dk-grayish-cyan: hsl(186, 14%, 43%);
+    --white: hsl(0, 0%, 100%);
+    --font: 'Space Mono', monospace;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--l-grayish-cyan);
+    font-family: var(--font);
+}
+
+button {
+    border: none;
+    border-radius: 0.2rem;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+input {
+    font-family: inherit;
+    color: var(--vdk-cyan);
+    background-color: var(--vl-grayish-cyan);
+    border-radius: 0.2rem;
+    border: none;
+
+}
+
+input::placeholder {
+    color: var(--vdk-cyan);
+}
+
+.bill-splitter {
+    width: 57.5rem;
+    height: 30rem;
+    border-radius: 1.25rem;
+    padding: 2rem;
+    background-color: var(--white);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.bill-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-right: 2rem;
+}
+
+.bill-input input {
+    width: 100%;
+}
+
+.tip-select {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.btn-tip {
+
+    background-color: var(--vdk-cyan);
+    color: var(--white);
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    font-size: 1.5rem;
+
+}
+
+/* button.btn-tip:active {
+    background-color: var(--strong-cyan);
+} */
+
+.btn-tip:hover {
+    background-color: var(--l-cyan);
+    color: var(--vdk-cyan);
+}
+
+.bill-splitter .bill-label input {
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    text-align: right;
+}
+
+.bill-splitter .bill-label p {
+    color: var(--dk-grayish-cyan);
+    margin-bottom: 0.5rem;
+}
+
+.bill-output {
+    background-color: var(--vdk-cyan);
+    border-radius: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+.output-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.output-field {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.output-box .output-text> :first-child {
+    color: var(--vl-grayish-cyan);
+}
+
+.output-box .output-text> :last-child {
+    color: var(--grayish-cyan);
+}
+
+.output-box .output-value {
+    color: var(--strong-cyan);
+    font-size: 3rem;
+}
+
+.bill-output .reset {
+    background-color: var(--strong-cyan);
+    color: var(--vdk-cyan);
+    padding: 0.5rem;
+    font-size: 1.5rem;
+
+}
+
+.bill-output .reset:hover {
+    background-color: var(--l-cyan);
+}

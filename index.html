@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tip Calculator App</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- space mono font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+  <script defer src="app.js"></script>
+</head>
+
+<body>
+
+
+
+  <div class="bill-splitter">
+    <div class="bill-input">
+      <div class="bill-input-field">
+        <label for="" class="bill-label">
+          <p>Bill</p>
+          <input type="number" name="" id="total-amount" placeholder="00.00">
+        </label>
+      </div>
+      <div class="bill-input-field">
+        <label for="" class="bill-label">
+          <p>Select tip %</p>
+          <div class="tip-select">
+            <button class="btn-tip">5%</button>
+            <button class="btn-tip">10%</button>
+            <button class="btn-tip">15%</button>
+            <button class="btn-tip">25%</button>
+            <button class="btn-tip">50%</button>
+            <button class="btn-tip">Custom</button>
+          </div>
+        </label>
+      </div>
+      <div class="bill-input-field">
+        <label for="" class="bill-label">
+          <p>No. of people</p>
+          <input type="number" name="" id="total-people" placeholder="1">
+        </label>
+      </div>
+    </div>
+
+
+
+    <div class="bill-output">
+      <div class="output-field">
+        <div class="output-box">
+          <div class="output-text">
+            <p>Tip Amount</p>
+            <p>/ person</p>
+          </div>
+          <div class="output-value" id="tip-amount">$0</div>
+        </div>
+        <div class="output-box">
+          <div class="output-text">
+            <p>Total</p>
+            <p>/ person</p>
+          </div>
+          <div class="output-value" id="per-person">$00.00</div>
+        </div>
+      </div>
+      <button class="reset">Reset</button>
+    </div>
+  </div>
+
+  <!-- <div class="rec"></div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Bill
+  
+  Select Tip %
+  5%
+  10%
+  15%
+  25%
+  50%
+  Custom
+  
+  Number of People
+  
+  Tip Amount
+  / person
+  
+  Total
+  / person
+  
+  Reset -->
+</body>
+
+</html>

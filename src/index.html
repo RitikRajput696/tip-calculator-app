@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
-  <script defer src="app.js"></script>
+
 </head>
 
 <body>
@@ -24,26 +24,29 @@
       <div class="bill-input-field">
         <label for="" class="bill-label">
           <p>Bill</p>
-          <input type="number" name="" id="total-amount" placeholder="00.00">
+          <input type="number" name="" id="input-total-amount" placeholder="0">
         </label>
       </div>
       <div class="bill-input-field">
         <label for="" class="bill-label">
           <p>Select tip %</p>
           <div class="tip-select">
-            <button class="btn-tip">5%</button>
-            <button class="btn-tip">10%</button>
-            <button class="btn-tip">15%</button>
-            <button class="btn-tip">25%</button>
-            <button class="btn-tip">50%</button>
-            <button class="btn-tip">Custom</button>
+            <button type="button" class="btn-tip btn-5">5%</button>
+            <button type="button" class="btn-tip btn-10">10%</button>
+            <button type="button" class="btn-tip btn-15">15%</button>
+            <button type="button" class="btn-tip btn-25">25%</button>
+            <button type="button" class="btn-tip btn-50">50%</button>
+            <button type="button" class="btn-tip btn-custom" id="customPercentage">Custom</button>
           </div>
         </label>
       </div>
       <div class="bill-input-field">
         <label for="" class="bill-label">
-          <p>No. of people</p>
-          <input type="number" name="" id="total-people" placeholder="1">
+          <div class="bill-input-text">
+            <p>No. of people</p>
+            <p class="error">can't be zero</p>
+          </div>
+          <input type="number" name="" id="total-people" placeholder="0">
         </label>
       </div>
     </div>
@@ -52,6 +55,13 @@
 
     <div class="bill-output">
       <div class="output-field">
+        <div class="output-box">
+          <div class="output-text">
+            <p>Total Amount</p>
+            <p>original + tip</p>
+          </div>
+          <div class="output-value" id="total-payable-amount">$0</div>
+        </div>
         <div class="output-box">
           <div class="output-text">
             <p>Tip Amount</p>
@@ -64,58 +74,14 @@
             <p>Total</p>
             <p>/ person</p>
           </div>
-          <div class="output-value" id="per-person">$00.00</div>
+          <div class="output-value" id="per-person">$0</div>
         </div>
       </div>
       <button class="reset">Reset</button>
     </div>
   </div>
 
-  <!-- <div class="rec"></div> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <!-- Bill
-  
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
-  
-  Number of People
-  
-  Tip Amount
-  / person
-  
-  Total
-  / person
-  
-  Reset -->
+  <script src="app.js"></script>
 </body>
 
 </html>

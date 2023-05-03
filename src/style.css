@@ -67,6 +67,20 @@ input::placeholder {
     width: 100%;
 }
 
+.bill-input-text {
+    display: flex;
+    justify-content: space-between;
+}
+
+.error {
+    color: red !important;
+    display: none;
+}
+
+.show-error {
+    display: block;
+}
+
 .tip-select {
     display: grid;
     gap: 1rem;
@@ -83,9 +97,9 @@ input::placeholder {
 
 }
 
-/* button.btn-tip:active {
+.tip-btn-active {
     background-color: var(--strong-cyan);
-} */
+}
 
 .btn-tip:hover {
     background-color: var(--l-cyan);

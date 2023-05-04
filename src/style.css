@@ -39,11 +39,17 @@ input {
     background-color: var(--vl-grayish-cyan);
     border-radius: 0.2rem;
     border: none;
+    text-align: right;
 
 }
 
 input::placeholder {
     color: var(--vdk-cyan);
+}
+
+input:focus {
+    border: 3px solid var(--strong-cyan);
+    outline: none;
 }
 
 .bill-splitter {
@@ -76,6 +82,10 @@ input::placeholder {
     color: red !important;
     display: none;
 }
+
+/* .border-red {
+    border: 3px solid red;
+} */
 
 .show-error {
     display: block;

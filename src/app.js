@@ -31,6 +31,7 @@ tipBtns.forEach((btn) => {
       if (btn.id !== 'customPercentage') {
         percentageValue = btn.innerText;
         percentage = percentageValue.slice(0, percentageValue.length - 1);
+        validateInput();
         calculateTip();
         setValues();
       }
@@ -38,7 +39,6 @@ tipBtns.forEach((btn) => {
   });
 });
 
-//
 // functions
 
 function calculateTip() {
@@ -47,11 +47,19 @@ function calculateTip() {
 }
 
 function setValues() {
-  // show tip amount and total payable amount
   totalAmountPayable.innerText = `$` + (Number(inputAmount.value) + tip);
-  // show per person amount
-  perPerson.innerText =
-    `$` + (Number(inputAmount.value) + tip) / inputTotalPeople.value;
-  // show total tip
+  let perPersonAmount = (
+    (Number(inputAmount.value) + tip) /
+    inputTotalPeople.value
+  ).toFixed(2);
+  perPerson.innerText = `$` + perPersonAmount;
   totalTip.innerText = `$` + tip;
+}
+
+function validateInput() {
+  if (inputTotalPeople.value == 0 || inputTotalPeople.value == null) {
+    error.classList.add('show-error');
+  } else {
+    error.classList.remove('show-error');
+  }
 }

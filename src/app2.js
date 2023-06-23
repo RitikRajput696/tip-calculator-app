@@ -18,33 +18,24 @@ let percentage;
 let tip = 0;
 
 tipBtns.forEach((btn) => {
+  // add style to clicked buttons
   btn.addEventListener('pointerdown', () => {
-    if (
-      inputAmount == 0 ||
-      inputAmount == null ||
-      inputTotalPeople == 0 ||
-      inputTotalPeople == null
-    ) {
-      error.classList.add('show-error');
-    } else {
-      error.classList.remove('show-error');
-      btn.classList.add('tip-btn-active');
+    btn.classList.add('tip-btn-active');
 
-      // remove style from btn that are not active
-      tipBtns.forEach((tipBtn) => {
-        if (tipBtn !== btn) {
-          tipBtn.classList.remove('tip-btn-active');
-        }
-        // if button is not custom then set percentage value
-        if (btn.id !== 'customPercentage') {
-          percentageValue = btn.innerText;
-          percentage = percentageValue.slice(0, percentageValue.length - 1);
-          validateInput();
-          calculateTip();
-          setValues();
-        }
-      });
-    }
+    // remove style from btn that are not active
+    tipBtns.forEach((tipBtn) => {
+      if (tipBtn !== btn) {
+        tipBtn.classList.remove('tip-btn-active');
+      }
+      // if button is not custom then set percentage value
+      if (btn.id !== 'customPercentage') {
+        percentageValue = btn.innerText;
+        percentage = percentageValue.slice(0, percentageValue.length - 1);
+        validateInput();
+        calculateTip();
+        setValues();
+      }
+    });
   });
 });
 

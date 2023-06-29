@@ -16,45 +16,42 @@ const totalPerPerson = document.getElementById("per-person");
 const resetBtn = document.querySelector(".reset");
 
 // error
-const errorText = document.querySelector(".error");
+const errorText = document.querySelectorAll(".error");
+const errorTextArr = Array.from(errorText);
 
-let totalAmount;
-let totalPeople;
+
 inputTotalAmount.addEventListener("change", () => {
-    let totalAmount = inputTotalAmount.value;
-    console.log(totalAmount);
-    if (totalAmount.value != 0) {
-        calculateBill();
-
-    }
+    calculateBill();
 });
 
 inputTotalPeople.addEventListener("change", () => {
-    let totalPeople = inputTotalPeople.value;
-    console.log(totalPeople);
     calculateBill();
 })
 
 function calculateBill() {
     handleErrors();
-    setValues();
+
 }
 function handleErrors() {
-    if (totalAmount == 0 || totalAmount == "") {
-        errorText.classList.add('show-error');
+    if (inputTotalAmount.value == 0 || inputTotalAmount.value == "") {
+        errorTextArr[0].classList.add('show-error');
+        outputPayableAmount.textContent = "$" + 0;
     } else {
-        errorText.classList.remove(".show-error");
+        errorTextArr[0].classList.remove(".show-error");
+        setValues();
     }
-    if (totalPeople == 0 || totalPeople == "") {
-        errorText.classList.add('show-error');
+    if (inputTotalPeople.value == 0 || inputTotalPeople.value == "") {
+        errorTextArr[1].classList.add('show-error');
+        outputPayableAmount.textContent = "$" + 0;
     } else {
-        errorText.classList.remove(".show-error");
+        errorText[1].classList.remove(".show-error");
+        setValues();
     }
 }
 
 function setValues() {
-    console.log(totalAmount);
-    console.log(totalPeople);
-    console.log(outputPayableAmount.textContent = totalAmount / totalPeople);
-    outputPayableAmount.textContent = totalAmount / totalPeople;
+    console.log(inputTotalAmount.value);
+    console.log(inputTotalPeople.value);
+    console.log(outputPayableAmount.textContent = inputTotalAmount.value / inputTotalPeople.value);
+    outputPayableAmount.textContent = (inputTotalAmount.value / inputTotalPeople.value).toFixed(2);
 }

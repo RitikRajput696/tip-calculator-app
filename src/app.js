@@ -37,21 +37,18 @@ function handleErrors() {
         errorTextArr[0].classList.add('show-error');
         outputPayableAmount.textContent = "$" + 0;
     } else {
-        errorTextArr[0].classList.remove(".show-error");
+        errorTextArr[0].classList.remove("show-error");
         setValues();
     }
     if (inputTotalPeople.value == 0 || inputTotalPeople.value == "") {
         errorTextArr[1].classList.add('show-error');
         outputPayableAmount.textContent = "$" + 0;
     } else {
-        errorText[1].classList.remove(".show-error");
+        errorText[1].classList.remove("show-error");
         setValues();
     }
 }
 
 function setValues() {
-    console.log(inputTotalAmount.value);
-    console.log(inputTotalPeople.value);
-    console.log(outputPayableAmount.textContent = inputTotalAmount.value / inputTotalPeople.value);
     outputPayableAmount.textContent = (inputTotalAmount.value / inputTotalPeople.value).toFixed(2);
 }

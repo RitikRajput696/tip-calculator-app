@@ -36,8 +36,6 @@ tipBtns.forEach((tipBtn) => {
                 percentageValue = tipBtn.innerText;
                 percentage = Number(percentageValue.slice(0, percentageValue.length - 1));
                 calculateBill();
-            } else {
-
             }
         })
     })
@@ -62,7 +60,10 @@ function handleErrors() {
     if (inputTotalAmount.value == 0 || inputTotalAmount.value == "") {
         errorTextArr[0].classList.add('show-error');
         outputPayableAmount.textContent = "$0";
+        tipPerPerson.textContent = "$0";
         totalPerPerson.textContent = "$0";
+
+
     } else {
         errorTextArr[0].classList.remove("show-error");
         setValues();
@@ -70,6 +71,7 @@ function handleErrors() {
     if (inputTotalPeople.value == 0 || inputTotalPeople.value == "") {
         errorTextArr[1].classList.add('show-error');
         outputPayableAmount.textContent = "$0";
+        tipPerPerson.textContent = "$0";
         totalPerPerson.textContent = "$0";
     } else {
         errorText[1].classList.remove("show-error");
@@ -90,5 +92,6 @@ function resetValues() {
     outputPayableAmount.textContent = "$0";
     tipPerPerson.textContent = "$0";
     totalPerPerson.textContent = "$0";
-
+    inputTotalAmount.value = 0
+    inputTotalPeople.value = 0;
 }

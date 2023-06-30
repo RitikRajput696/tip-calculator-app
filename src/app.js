@@ -6,7 +6,7 @@ const btn15 = document.querySelector(".btn-15");
 const btn25 = document.querySelector(".btn-25");
 const btn50 = document.querySelector(".btn-50");
 const btnCustom = document.querySelector(".btn-custom");
-const tipBtns = document.querySelector(".btn-tip");
+const tipBtns = Array.from(document.querySelectorAll(".btn-tip"));
 const inputTotalPeople = document.getElementById("input-total-people");
 
 // output buttons selector 
@@ -19,6 +19,24 @@ const resetBtn = document.querySelector(".reset");
 const errorText = document.querySelectorAll(".error");
 const errorTextArr = Array.from(errorText);
 
+// variables
+let percentage;
+let percentageValue;
+tipBtns.forEach((tipBtn) => {
+    tipBtn.addEventListener("pointerdown", () => {
+        tipBtn.classList.add("tip-btn-active");
+        tipBtns.forEach((btn) => {
+            if (btn !== tipBtn) {
+                btn.classList.remove("tip-btn-active");
+            }
+
+            if (tipBtn.id !== customPercentage) {
+                percentageValue = tipBtn.innerText;
+                percentage = percentageValue.slice(0, percentageValue.length - 1);
+            }
+        })
+    })
+})
 
 inputTotalAmount.addEventListener("change", () => {
     calculateBill();
@@ -28,6 +46,7 @@ inputTotalPeople.addEventListener("change", () => {
     calculateBill();
 })
 
+
 function calculateBill() {
     handleErrors();
 
@@ -35,14 +54,14 @@ function calculateBill() {
 function handleErrors() {
     if (inputTotalAmount.value == 0 || inputTotalAmount.value == "") {
         errorTextArr[0].classList.add('show-error');
-        outputPayableAmount.textContent = "$" + 0;
+        outputPayableAmount.textContent = "$0";
     } else {
         errorTextArr[0].classList.remove("show-error");
         setValues();
     }
     if (inputTotalPeople.value == 0 || inputTotalPeople.value == "") {
         errorTextArr[1].classList.add('show-error');
-        outputPayableAmount.textContent = "$" + 0;
+        outputPayableAmount.textContent = "$0";
     } else {
         errorText[1].classList.remove("show-error");
         setValues();

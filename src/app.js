@@ -127,7 +127,7 @@ function resetValues() {
     outputPayableAmount.textContent = "$0";
     // tipPerPerson.textContent = "$0";
     totalPerPerson.textContent = "$0";
-    inputTotalAmount.value = 0
-    inputTotalPeople.value = 0;
-    btnCustom.value = 0;
+    inputTotalAmount.value = "";
+    inputTotalPeople.value = "";
+    btnCustom.value = "";
 }

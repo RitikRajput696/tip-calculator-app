@@ -11,7 +11,7 @@ const inputTotalPeople = document.getElementById("input-total-people");
 
 // output buttons selector 
 const outputPayableAmount = document.getElementById("total-payable-amount");
-const tipPerPerson = document.getElementById("tip-amount");
+// const tipPerPerson = document.getElementById("tip-amount");
 const totalPerPerson = document.getElementById("per-person");
 const resetBtn = document.querySelector(".reset");
 
@@ -95,7 +95,7 @@ function handleErrors() {
     if (inputTotalAmount.value == 0 || inputTotalAmount.value == "") {
         errorTextArr[0].classList.add('show-error');
         outputPayableAmount.textContent = "$0";
-        tipPerPerson.textContent = "$0";
+        // tipPerPerson.textContent = "$0";
         totalPerPerson.textContent = "$0";
 
 
@@ -106,7 +106,7 @@ function handleErrors() {
     if (inputTotalPeople.value == 0 || inputTotalPeople.value == "") {
         errorTextArr[2].classList.add('show-error');
         outputPayableAmount.textContent = "$0";
-        tipPerPerson.textContent = "$0";
+        // tipPerPerson.textContent = "$0";
         totalPerPerson.textContent = "$0";
     } else {
         errorText[2].classList.remove("show-error");
@@ -118,14 +118,14 @@ function setValues() {
     const tipAmount = Number((percentage / 100 * inputTotalAmount.value).toFixed(2));
     const totalPayableAmount = Number(tipAmount + Number(inputTotalAmount.value)).toFixed(2);
     outputPayableAmount.textContent = totalPayableAmount;
-    tipPerPerson.textContent = (tipAmount / inputTotalPeople.value).toFixed(2);
+    // tipPerPerson.textContent = (tipAmount / inputTotalPeople.value).toFixed(2);
     totalPerPerson.textContent = (totalPayableAmount / inputTotalPeople.value).toFixed(2);
 }
 
 //reset values 
 function resetValues() {
     outputPayableAmount.textContent = "$0";
-    tipPerPerson.textContent = "$0";
+    // tipPerPerson.textContent = "$0";
     totalPerPerson.textContent = "$0";
     inputTotalAmount.value = 0
     inputTotalPeople.value = 0;

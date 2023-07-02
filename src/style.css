@@ -24,6 +24,8 @@ body {
     justify-content: center;
     background-color: var(--l-grayish-cyan);
     font-family: var(--font);
+    padding: 1rem;
+
 }
 
 button {
@@ -53,9 +55,18 @@ input:focus {
     outline: none;
 }
 
+.splitter {
+    font-family: var(--font);
+    font-size: 1.5rem;
+    color: var(--dk-grayish-cyan);
+    padding-bottom: 3rem;
+
+}
+
 .bill-splitter {
-    width: 57.5rem;
-    height: 30rem;
+    max-width: 57.5rem;
+    width: 100%;
+    min-height: 30rem;
     border-radius: 1.25rem;
     padding: 2rem;
     background-color: var(--white);
@@ -191,4 +202,16 @@ input:focus {
 
 .bill-output .reset:hover {
     background-color: var(--l-cyan);
+}
+
+@media screen and (max-width:768px) {
+    .bill-splitter {
+
+        grid-template-columns: 1fr;
+    }
+
+    .bill-output {
+        margin-top: 2rem;
+    }
+
 }

@@ -29,19 +29,20 @@
             <p>Bill</p>
             <p class="error error-amount">can't be zero or empty</p>
           </div>
-          <input type="number" pattern="[1-9]" name="total amount" id="input-total-amount" placeholder="0">
+          <input type="number" pattern="[1-9]" name="total amount" id="input-total-amount" placeholder="$0">
         </label>
       </div>
       <div class="bill-input-field">
         <label for="" class="bill-label">
           <p>Select tip %</p>
+          <p class="error error-amount">can't be zero or empty</p>
           <div class="tip-select">
             <button type="button" class="btn-tip btn-5 tip-btn-active">5%</button>
             <button type="button" class="btn-tip btn-10">10%</button>
             <button type="button" class="btn-tip btn-15">15%</button>
             <button type="button" class="btn-tip btn-25">25%</button>
             <button type="button" class="btn-tip btn-50">50%</button>
-            <input type="number" class="btn-tip btn-custom" id="customPercentage" placeholder="Custom">
+            <input type="number" class="btn-custom" id="customPercentage" placeholder="Custom">
           </div>
         </label>
       </div>
@@ -51,7 +52,7 @@
             <p>No. of people</p>
             <p class="error error-people">can't be zero or empty</p>
           </div>
-          <input type="number" pattern="[1-9]" name="total people" id="input-total-people" placeholder="0">
+          <input type="number" pattern="[1-9]" name="total people" id="input-total-people" placeholder="$0">
         </label>
       </div>
     </div>

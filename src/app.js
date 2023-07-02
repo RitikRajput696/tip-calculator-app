@@ -30,9 +30,7 @@ tipBtns.forEach((tipBtn) => {
         tipBtns.forEach((btn) => {
             if (btn !== tipBtn) {
                 btn.classList.remove("tip-btn-active");
-            }
-
-            if (tipBtn.id !== customPercentage) {
+                errorText[1].classList.remove("show-error"); // remove error from custom button if tip button percentage is used
                 percentageValue = tipBtn.innerText;
                 percentage = Number(percentageValue.slice(0, percentageValue.length - 1));
                 calculateBill();
@@ -41,16 +39,53 @@ tipBtns.forEach((tipBtn) => {
     })
 })
 
+
+
+
+
 inputTotalAmount.addEventListener("change", () => {
+    // restric values to be less than 0
+    if (inputTotalAmount.value < 0) {
+        inputTotalAmount.value = 0;
+    };
     calculateBill();
 });
 
 inputTotalPeople.addEventListener("change", () => {
+    // restric values to be less than 0
+    if (inputTotalPeople.value < 0) {
+        inputTotalPeople.value = 0;
+    };
     calculateBill();
+})
+
+// custom button logic
+btnCustom.addEventListener("change", () => {
+
+    // remove the active status from tip button when custom percentage is used
+    tipBtns.forEach((tipBtn) => {
+        tipBtn.classList.remove("tip-btn-active");
+    })
+    if (btnCustom.value == 0 || btnCustom.value == "") {
+        errorText[1].classList.add("show-error");
+    }
+    // restric values to be less than 0
+    else if (btnCustom.value < 0) {
+        btnCustom.value = 0;
+
+    } else {
+        errorText[1].classList.remove("show-error");
+        percentage = Number(btnCustom.value);
+        calculateBill();
+    }
 })
 resetBtn.addEventListener("click", () => {
     resetValues();
 })
+
+
+
+//functions 
 
 function calculateBill() {
     handleErrors();
@@ -69,12 +104,12 @@ function handleErrors() {
         setValues();
     }
     if (inputTotalPeople.value == 0 || inputTotalPeople.value == "") {
-        errorTextArr[1].classList.add('show-error');
+        errorTextArr[2].classList.add('show-error');
         outputPayableAmount.textContent = "$0";
         tipPerPerson.textContent = "$0";
         totalPerPerson.textContent = "$0";
     } else {
-        errorText[1].classList.remove("show-error");
+        errorText[2].classList.remove("show-error");
         setValues();
     }
 }
@@ -94,4 +129,5 @@ function resetValues() {
     totalPerPerson.textContent = "$0";
     inputTotalAmount.value = 0
     inputTotalPeople.value = 0;
+    btnCustom.value = 0;
 }
